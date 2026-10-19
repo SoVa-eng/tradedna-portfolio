@@ -1,0 +1,17 @@
+
+{
+  "firm_name": "Example Prop Firm",
+  "plan_name": "Example 50K Evaluation",
+  "account_size": 50000,
+  "account_type": "Evaluation",
+  "profit_target": 3000,
+  "maximum_loss_limit": 2000,
+  "daily_loss_limit": 1000,
+  "consistency_rule_percent": 40,
+  "minimum_trading_days": 5,
+  "payout_policy": "Example policy - verify with official source",
+  "fees_usd": 99.00,
+  "source_url": "https://example.com/",
+  "last_verified": "2026-10-19",
+  "verification_status": "Fictional demonstration data"
+}
