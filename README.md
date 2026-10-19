@@ -1,39 +1,33 @@
 # TradeDNA — Trading Data API Portfolio
 
-## Project Overview
+## Overview
 
-TradeDNA is a personal software project focused on organizing trading data and helping traders better understand their trading activity.
+TradeDNA is an independent software project focused on organizing trading data and helping traders better understand their trading activity.
 
-The project uses Python and FastAPI to provide API functionality for trading-related information.
+This portfolio demonstrates my experience with structured data, API development, data validation, software testing, and prop-trading concepts.
 
-## My Technical Work
+## Technical Project
 
-- Built and tested API endpoints using Python and FastAPI.
-- Worked with structured JSON responses and trading account, order, and fill records.
-- Investigated data validation and the distinction between raw fills and reconstructed trades.
-- Debugged issues and used automated tests to verify software behavior.
-- Ran regression tests to improve reliability and catch problems.
+**Technology:** Python, FastAPI, REST APIs, JSON, pytest
 
-## Technology
-
-- Python
-- FastAPI
-- REST APIs
-- JSON
-- Automated testing
-
-## Relevance to Prop-Firm Data and Product Work
-
-Developing TradeDNA has given me practical experience working with structured data, validating records, testing software features, and troubleshooting technical issues.
-
-These skills are relevant to maintaining accurate prop-firm information, testing product features, and helping turn technical information into useful resources for traders.
-
-## Project Status
-
-TradeDNA is an independent development project. Features should be considered in development unless specifically identified as complete and tested.
+My work on TradeDNA has involved:
+- Building and testing API endpoints.
+- Working with structured trading account, order, and fill records.
+- Investigating data validation and trade reconstruction.
+- Troubleshooting software issues and running automated tests.
+- Improving reliability through regression testing.
 
 ## Work Samples
 
-This portfolio may include sanitized examples of API responses, screenshots of API documentation, and testing results.
+- [Sample Prop-Firm Plan Data](samples/prop-firm-plan-example.json) — Example of structured plan information using fictional data.
+- [Data Quality Checklist](samples/data-quality-checks.md) — A repeatable process for reviewing prop-firm information before publication.
+- [Testing Results](samples/testing-results.md) — Summary of automated testing performed on the TradeDNA MFP release.
 
-No private trading records, account identifiers, credentials, or proprietary source code are published here.
+## Relevance to SmartPropFirm
+
+This work demonstrates practical experience with structured information, quality assurance, technical troubleshooting, and futures trading concepts. These skills are relevant to researching prop firms, maintaining accurate plan information, and testing trader-focused tools.
+
+## Data Integrity
+
+The prop-firm sample uses fictional data. Private trading records, credentials, and proprietary application source code are not included in this portfolio.
+
