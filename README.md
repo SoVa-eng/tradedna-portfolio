@@ -6,9 +6,9 @@ The project demonstrates practical work in API development, data integration, da
 
 ## API Documentation Preview
 
-![TradeDNA API Documentation](tradedna-api-docs.png)
+![TradeDNA API Documentation](tradedna-api-docs.PNG)
 
-*Screenshot of the TradeDNA API documentation interface. The screenshot is a visual portfolio example and does not imply that a live API is publicly hosted.*
+*Screenshot of the TradeDNA API documentation interface. This is a visual portfolio example; it does not imply that a live API is publicly hosted.*
 
 ## Project Overview
 
