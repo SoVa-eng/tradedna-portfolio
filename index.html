@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TradeDNA — Portfolio Dashboard Preview</title>
+<style>
+:root{color-scheme:dark;--bg:#030916;--panel:rgba(5,20,40,.88);--panel2:#07152a;--line:#123d66;--blue:#28a9ff;--cyan:#42e8ff;--green:#00e0a4;--purple:#a66bff;--gold:#ffc85a;--text:#eef7ff;--muted:#86a8c9;--dim:#4f7399;--shadow:0 0 30px #007cff12}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 73% 0%,#08234a 0,transparent 36%),radial-gradient(ellipse at 0% 50%,#061a35 0,transparent 36%),var(--bg);color:var(--text);font:14px/1.5 Inter,Segoe UI,Arial,sans-serif;min-height:100vh}body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.15;background-image:linear-gradient(#17416a44 1px,transparent 1px),linear-gradient(90deg,#17416a44 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,#000,transparent 80%)}a{color:inherit;text-decoration:none}button{font:inherit}.app{display:grid;grid-template-columns:246px minmax(0,1fr);min-height:100vh;position:relative}.sidebar{position:sticky;top:0;height:100vh;padding:24px 16px 18px;background:linear-gradient(180deg,#030b19f5,#041126f7);border-right:1px solid #17436b;display:flex;flex-direction:column;z-index:3}.brand{display:flex;align-items:center;gap:12px;padding:0 8px 28px;border-bottom:1px solid #12304f}.brandmark{width:43px;height:43px;border:1px solid #138be5;border-radius:13px;display:grid;place-items:center;color:var(--cyan);font-size:26px;box-shadow:0 0 22px #008cff24;background:linear-gradient(135deg,#0b2d51,#061326)}.brandname{font-size:21px;font-weight:800;letter-spacing:-.8px}.brandname span{color:var(--blue)}.brandtag{font-size:9px;color:#6ba9dd;letter-spacing:1.6px;text-transform:uppercase}.navlabel{font-size:10px;letter-spacing:2px;color:#557da3;margin:25px 11px 8px;font-weight:700}.nav{display:flex;gap:12px;align-items:center;padding:11px 12px;border:1px solid transparent;border-radius:10px;color:#9db9d5;margin:2px 0;transition:.18s}.nav:hover,.nav.active{background:linear-gradient(90deg,#0c3a66b8,#0b1e39);border-color:#12548a;color:#eaf8ff;box-shadow:inset 2px 0 var(--cyan),0 0 18px #007bff12}.nav .ico{width:21px;text-align:center;color:#4abaff;font-size:17px}.sidebrand{margin-top:auto;border:1px solid #145083;border-radius:14px;padding:14px;background:radial-gradient(circle at 100% 100%,#07528a77,transparent 55%),linear-gradient(145deg,#071e3b,#030b19);overflow:hidden}.mfpmark{display:flex;align-items:center;gap:10px;font-weight:750}.shield{display:grid;place-items:center;width:37px;height:42px;clip-path:polygon(50% 0,95% 17%,90% 73%,50% 100%,10% 73%,5% 17%);border:0;background:linear-gradient(135deg,#ffd66c,#94601b);color:#06152b;font-size:12px;font-weight:900}.sidebrand p{font-size:10px;letter-spacing:1px;color:#80b6e5;margin:12px 0 0}.sidefoot{font-size:11px;color:#7397ba;margin:14px 4px 0}.main{min-width:0;padding:25px clamp(16px,2.4vw,38px) 28px;max-width:1800px;width:100%;margin:0 auto}.hero{position:relative;min-height:150px;display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding:8px 4px 24px;overflow:hidden}.hero:after{content:"";position:absolute;right:2%;top:-120px;width:410px;height:270px;background:radial-gradient(ellipse,#087de52b,transparent 68%);pointer-events:none}.eyebrow{color:#5ebaff;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-weight:750}.hero h1{font-size:clamp(25px,3vw,39px);line-height:1.12;letter-spacing:-1.3px;margin:10px 0 8px}.hero h1 span{color:var(--cyan);text-shadow:0 0 24px #00baff45}.subtitle{color:#88acd0}.accountline{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.tinysep{color:#3e709e}.mfpchip{display:inline-flex;align-items:center;gap:7px;border:1px solid #27598a;background:#061a32;padding:5px 10px;border-radius:7px;color:#c4e6ff;font-size:11px}.mfpchip b{color:var(--gold)}.connect{z-index:1;margin-top:9px;border:1px solid #087b83;border-radius:12px;background:#031d29d9;padding:12px 16px;display:flex;align-items:center;gap:11px;box-shadow:0 0 25px #00e0a40b}.led{width:10px;height:10px;background:var(--green);border-radius:50%;box-shadow:0 0 13px #00e0a4}.connect strong{display:block;color:var(--green);font-size:11px;letter-spacing:.7px}.connect small{display:block;color:#8bb9ce;font-size:11px}.heroart{position:absolute;right:20%;top:-36px;opacity:.18;font-size:110px;color:#228cff;filter:drop-shadow(0 0 30px #007bff);pointer-events:none}.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}.panel{position:relative;min-width:0;border:1px solid #12436c;border-radius:15px;background:linear-gradient(145deg,#07172bdc,#030d1cf5);box-shadow:var(--shadow);overflow:hidden}.panel:before{content:"";position:absolute;inset:0 auto auto 0;width:100%;height:1px;background:linear-gradient(90deg,transparent,#27b9ff88,transparent)}.metric{padding:18px;min-height:124px;display:flex;gap:14px;align-items:flex-start}.metricicon{flex:0 0 45px;height:45px;display:grid;place-items:center;border-radius:12px;background:#052447;border:1px solid #12518a;color:var(--blue);font-size:22px;box-shadow:inset 0 0 18px #078fff14}.metricicon.green{color:var(--green);border-color:#08785f;background:#032b2a}.metricicon.purple{color:var(--purple);border-color:#573b91;background:#1b1239}.metricicon.gold{color:var(--gold);border-color:#735421;background:#2a200d}.mlabel{color:#7fa9ce;font-size:10px;text-transform:uppercase;letter-spacing:1.2px}.mvalue{font-size:clamp(23px,2.2vw,31px);font-weight:800;letter-spacing:-.8px;margin:5px 0 2px;overflow-wrap:anywhere}.mnote{font-size:11px;color:#7295b8}.metricglow{position:absolute;right:13px;bottom:8px;color:#127edb26;font-size:36px}.sectiongrid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,1fr);gap:14px;margin-top:14px}.panelpad{padding:19px}.sectiontitle{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:17px}.sectiontitle h2{margin:0;font-size:14px;letter-spacing:.3px;text-transform:uppercase}.secticon{color:var(--blue);margin-right:8px}.tag{display:inline-flex;align-items:center;gap:6px;border:1px solid #24517a;border-radius:99px;padding:4px 9px;color:#a7c9e9;font-size:10px;white-space:nowrap}.tag.warn{color:var(--gold);border-color:#6d5123;background:#241b0b}.tag.ok{color:var(--green);border-color:#087a66;background:#042622}.equitywrap{height:210px;position:relative;border-radius:10px;overflow:hidden;background:linear-gradient(180deg,#071a30,#041020)}.equitywrap svg{width:100%;height:100%;display:block}.chartnote{display:flex;justify-content:space-between;gap:12px;margin-top:12px;color:#6388ad;font-size:11px}.chartnote strong{color:#8fbce2;font-weight:600}.riskhead{display:flex;align-items:center;gap:13px;margin:4px 0 18px}.riskbadge{width:54px;height:54px;border:1px solid #087b72;border-radius:15px;display:grid;place-items:center;font-size:26px;color:var(--green);background:#032927;box-shadow:0 0 25px #00e0a410}.riskhead strong{display:block;font-size:17px;color:#e9f8ff}.riskhead small{color:#80a6c8}.riskitem{margin:16px 0}.risklabel{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:#a5c1dc;margin-bottom:7px}.risklabel b{color:#ecf7ff}.track{height:6px;border-radius:99px;background:#102c49;overflow:hidden}.track span{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#008cff,#36e2ff);box-shadow:0 0 10px #078cff66;transition:width .4s}.track.green span{background:linear-gradient(90deg,#00b987,#37f5c0)}.track.purple span{background:linear-gradient(90deg,#844bff,#d084ff)}.bottomgrid{display:grid;grid-template-columns:1.1fr 1.1fr 1fr;gap:14px;margin-top:14px}.dnafigure{display:grid;grid-template-columns:88px 1fr;gap:14px;align-items:center}.brain{width:88px;height:108px;border-radius:50%;display:grid;place-items:center;font-size:48px;color:#38bfff;background:radial-gradient(ellipse,#0b5a9c70,transparent 70%);border:1px solid #104d80;box-shadow:inset 0 0 28px #008cff17}.trait{margin:10px 0}.traithead{display:flex;justify-content:space-between;color:#9cbad6;font-size:11px;margin-bottom:5px}.traithead span:last-child{color:#5f98c7}.insightbox{border:1px solid #143e63;background:#06162a;border-radius:11px;padding:14px;margin-top:12px}.insightbox h3{font-size:14px;margin:0 0 7px}.insightbox p{font-size:12px;color:#80a2c4;margin:0;line-height:1.65}.checklist{display:grid;gap:8px;margin-top:12px;color:#80a8cc;font-size:11px}.checklist span:before{content:'✓';color:var(--cyan);margin-right:8px}.tradechart{height:105px;position:relative;overflow:hidden;margin-top:14px;border-radius:8px;background:linear-gradient(180deg,#071a30,#041020)}.tradechart svg{width:100%;height:100%}.actions{margin-top:14px;padding:16px;border:1px solid #12436c;border-radius:15px;background:linear-gradient(110deg,#06162b,#041020)}.actiongrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.action{display:flex;align-items:center;gap:11px;text-align:left;min-width:0;padding:12px;border:1px solid #174a76;border-radius:10px;background:linear-gradient(120deg,#0a2543,#061326);color:#e4f5ff;cursor:pointer;transition:.18s}.action:hover{border-color:#25aaff;box-shadow:0 0 20px #078cff19;transform:translateY(-1px)}.action .ai{font-size:23px;color:var(--blue)}.action b{display:block;font-size:11px}.action small{display:block;font-size:10px;color:#7fa7ca;margin-top:2px}.arrow{margin-left:auto;color:#3abaff;font-size:19px}.footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:19px 4px 0;color:#51769a;font-size:10px}.footer b{color:#75a8d5;font-weight:600}.error{color:#ffb86b}.sr{position:absolute;left:-9999px}
+@media(max-width:1250px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.bottomgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.bottomgrid>.panel:last-child{grid-column:span 2}.actiongrid{grid-template-columns:repeat(2,minmax(0,1fr))}.heroart{right:10%}}
+@media(max-width:850px){.app{grid-template-columns:76px minmax(0,1fr)}.sidebar{padding:18px 9px}.brand{justify-content:center;padding:0 0 22px}.brandtext,.navlabel,.navtext,.sidebrand,.sidefoot{display:none}.nav{justify-content:center;padding:12px 5px}.nav .ico{font-size:19px}.sectiongrid{grid-template-columns:1fr}.heroart{display:none}}
+@media(max-width:600px){.app{display:block}.sidebar{position:relative;width:100%;height:auto;padding:10px 12px;display:block;border-right:0;border-bottom:1px solid #17436b}.brand{justify-content:flex-start;border:0;padding:0}.brandtext{display:block}.brandtag{display:none}.sidebar nav{display:flex;overflow-x:auto;gap:5px;margin-top:10px}.navlabel,.sidebrand,.sidefoot{display:none}.nav{white-space:nowrap;padding:8px 10px;margin:0}.navtext{display:inline;font-size:11px}.nav .ico{width:auto;font-size:15px}.main{padding:16px 12px}.hero{min-height:auto;padding-bottom:18px;display:block}.connect{margin-top:15px;width:max-content;max-width:100%}.metrics{gap:8px}.metric{padding:12px;gap:9px;min-height:110px;display:block}.metricicon{width:34px;height:34px;margin-bottom:8px;font-size:17px}.mvalue{font-size:23px}.mnote{font-size:10px}.panelpad{padding:14px}.sectiongrid,.bottomgrid{grid-template-columns:1fr}.bottomgrid>.panel:last-child{grid-column:auto}.dnafigure{grid-template-columns:70px 1fr}.brain{width:70px;height:82px;font-size:36px}.actiongrid{grid-template-columns:1fr}.equitywrap{height:175px}.footer{display:block;line-height:1.8}}
+
+/* Futuristic trading-scene ambience: decorative only; no fabricated market data. */
+.hero{isolation:isolate;background:radial-gradient(ellipse at 73% 22%,#087bff20,transparent 48%)}
+.hero:before{content:"";position:absolute;z-index:-1;right:13%;top:-28px;width:min(590px,58%);height:180px;opacity:.52;background:linear-gradient(180deg,transparent,#03132a88),repeating-linear-gradient(90deg,transparent 0 24px,#178fff20 25px 26px),linear-gradient(135deg,transparent 38%,#0a4c8b44 39%,transparent 41%,transparent 52%,#1677c844 53%,transparent 55%);clip-path:polygon(0 100%,10% 64%,17% 74%,29% 24%,37% 55%,47% 13%,56% 58%,67% 28%,75% 66%,84% 0,91% 43%,100% 19%,100% 100%);filter:drop-shadow(0 0 18px #087cff);pointer-events:none}
+.heroart{right:24%;top:-26px;font-size:126px;opacity:.22;color:#2caaff;text-shadow:0 0 22px #078cff}
+.metric:nth-child(1):after,.metric:nth-child(2):after,.metric:nth-child(3):after,.metric:nth-child(4):after{content:"";position:absolute;right:0;bottom:0;width:48%;height:70%;opacity:.42;pointer-events:none;mask-image:linear-gradient(90deg,transparent,#000)}
+.metric:nth-child(1):after{background:repeating-linear-gradient(135deg,transparent 0 12px,#00d7b522 13px 14px),linear-gradient(160deg,transparent 56%,#00e0a433 57%,transparent 59%)}
+.metric:nth-child(2):after{background:repeating-linear-gradient(90deg,transparent 0 14px,#158cff33 15px 21px,transparent 22px 29px);clip-path:polygon(0 100%,0 74%,12% 74%,12% 48%,25% 48%,25% 62%,39% 62%,39% 20%,53% 20%,53% 44%,68% 44%,68% 0,82% 0,82% 100%)}
+.metric:nth-child(3):after{background:repeating-linear-gradient(120deg,transparent 0 12px,#159cff25 13px 14px),radial-gradient(ellipse at 80% 70%,#078cff40,transparent 65%)}
+.metric:nth-child(4):after{background:repeating-linear-gradient(0deg,transparent 0 12px,#9565ff22 13px 14px),radial-gradient(ellipse at 80% 80%,#8b5cff42,transparent 70%)}
+#performance{background-image:radial-gradient(ellipse at 35% 15%,#07539b25,transparent 54%),linear-gradient(145deg,#06162be8,#030d1cf5)}
+#performance:after{content:"";position:absolute;pointer-events:none;left:8%;right:4%;bottom:15px;height:65px;opacity:.23;background:repeating-linear-gradient(0deg,transparent 0 15px,#168bff55 16px 17px),repeating-linear-gradient(90deg,transparent 0 32px,#168bff44 33px 34px);transform:perspective(150px) rotateX(35deg);mask-image:linear-gradient(transparent,#000)}
+#risk{background-image:linear-gradient(110deg,#061629ee,#041322df),radial-gradient(ellipse at 85% 8%,#0c64b655,transparent 56%)}
+#risk:after{content:"";position:absolute;z-index:0;right:-12px;top:8px;width:48%;height:115px;opacity:.24;background:linear-gradient(180deg,transparent,#041323),linear-gradient(135deg,transparent 35%,#2878bd 36%,transparent 38%,transparent 47%,#2b8dd0 48%,transparent 50%),linear-gradient(155deg,transparent 40%,#164e81 41%,transparent 43%);clip-path:polygon(0 100%,0 72%,15% 53%,25% 67%,44% 15%,55% 54%,69% 5%,82% 62%,100% 29%,100% 100%);pointer-events:none}
+#dna{background-image:radial-gradient(ellipse at 16% 64%,#007cff20,transparent 50%),linear-gradient(145deg,#06172de8,#030d1cf5)}
+#dna:after{content:"";position:absolute;right:13px;top:8px;width:70px;height:220px;opacity:.2;background:repeating-radial-gradient(ellipse at 20% 8%,transparent 0 9px,#299dff 10px 11px,transparent 12px 18px);mask-image:linear-gradient(#000,transparent);pointer-events:none}
+.brain{position:relative;overflow:hidden;text-shadow:0 0 20px #159dff;box-shadow:inset 0 0 28px #008cff22,0 0 22px #008cff0b}
+#coach{background-image:radial-gradient(ellipse at 20% 20%,#0059a72b,transparent 45%),linear-gradient(145deg,#07172ce8,#030d1cf5)}
+#coach:after{content:"";position:absolute;right:-12px;top:20px;width:120px;height:120px;border-radius:50%;border:1px solid #158cff24;box-shadow:0 0 0 12px #158cff09,0 0 0 25px #158cff08,0 0 50px #087cff15;pointer-events:none}
+#history{background-image:radial-gradient(ellipse at 80% 55%,#07529b26,transparent 52%),linear-gradient(145deg,#06172be8,#030d1cf5)}
+#history .tradechart:before{content:"";position:absolute;inset:0;opacity:.36;background:repeating-linear-gradient(90deg,transparent 0 13px,#159dff 14px 15px,transparent 16px 25px);clip-path:polygon(0 76%,4% 76%,4% 52%,7% 52%,7% 80%,11% 80%,11% 40%,14% 40%,14% 68%,18% 68%,18% 29%,22% 29%,22% 60%,26% 60%,26% 47%,30% 47%,30% 23%,34% 23%,34% 53%,38% 53%,38% 34%,42% 34%,42% 66%,46% 66%,46% 42%,50% 42%,50% 19%,54% 19%,54% 55%,58% 55%,58% 30%,62% 30%,62% 48%,66% 48%,66% 12%,70% 12%,70% 42%,74% 42%,74% 21%,78% 21%,78% 60%,82% 60%,82% 28%,86% 28%,86% 45%,90% 45%,90% 7%,94% 7%,94% 34%,100% 34%,100% 100%,0 100%)}
+.actions{position:relative;overflow:hidden;background:radial-gradient(ellipse at 82% 0%,#07519a25,transparent 44%),linear-gradient(110deg,#06162b,#041020)}
+.actions:after{content:"";position:absolute;right:0;top:0;width:180px;height:100%;opacity:.16;background:repeating-linear-gradient(135deg,transparent 0 16px,#1a91ff 17px 18px);mask-image:linear-gradient(90deg,transparent,#000);pointer-events:none}
+.panel,.action{backdrop-filter:blur(3px)}
+@media(max-width:850px){.hero:before{right:0;width:65%;opacity:.24}}
+@media(prefers-reduced-motion:no-preference){.metricicon{transition:box-shadow .25s,transform .25s}.metric:hover .metricicon{transform:translateY(-2px);box-shadow:0 0 22px #168cff24}}
+
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="brandmark">⟠</div><div class="brandtext"><div class="brandname">Trade<span>DNA</span></div><div class="brandtag">Trading intelligence</div></div></div>
+  <nav>
+    <div class="navlabel">WORKSPACE</div><a class="nav active" href="#overview"><span class="ico">⌂</span><span class="navtext">Overview</span></a><a class="nav" href="#performance"><span class="ico">▥</span><span class="navtext">Performance</span></a><a class="nav" href="#history"><span class="ico">☷</span><span class="navtext">Trade history</span></a>
+    <div class="navlabel">INTELLIGENCE</div><a class="nav" href="#dna"><span class="ico">⌘</span><span class="navtext">Trader DNA</span></a><a class="nav" href="#coach"><span class="ico">◉</span><span class="navtext">Behavioral coach</span></a><a class="nav" href="#risk"><span class="ico">⬡</span><span class="navtext">Risk analytics</span></a>
+    <div class="navlabel">TOOLS</div><a class="nav" href="#api-preview"><span class="ico">◎</span><span class="navtext">API & integrations</span></a>
+  </nav>
+  <div class="sidebrand"><div class="mfpmark"><div class="shield">DEMO</div><div><div style="font-size:12px">Portfolio preview</div><div style="font-size:13px">TradeDNA</div></div></div><p>SIMULATED DATA<br>NO LIVE CONNECTION<br>NO PERSONAL TRADES</p></div>
+  <div class="sidefoot">TradeDNA v3.2.2 · Built for serious traders</div>
+</aside>
+<main class="main">
+<header class="hero" id="overview"><div><div class="eyebrow">Portfolio preview / trading intelligence console</div><h1 id="account-title">TradeDNA <span>Demo</span></h1>
+<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:10px">
+  <label for="account-selector" style="font-size:11px;color:var(--muted);font-weight:700;letter-spacing:.08em">ACCOUNT</label>
+  <select id="account-selector" aria-label="Select account" style="max-width:100%;min-width:220px;padding:9px 12px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--text)">
+    <option value="mfp-demo-account">TradeDNA Demo Account (Simulated)</option>
+  </select>
+</div><div class="accountline"><div class="subtitle" id="account-subtitle">Fictional portfolio preview — no live account data</div><span class="tinysep">•</span><span class="mfpchip"><b>MFP</b> MyFundedFutures</span></div></div><div class="heroart">⟠</div><div class="connect"><span class="led" id="status-dot"></span><div><strong id="connection">STATIC DEMO</strong><small>No live account connection</small></div></div></header>
+
+<div id="demo-banner" hidden style="margin:0 0 15px;padding:13px 16px;border:1px solid #a87924;border-radius:10px;background:linear-gradient(90deg,#392707,#211806);color:#ffe0a0;font-weight:800;letter-spacing:.5px">
+  SIMULATED DATA - NOT LIVE MFP TRADES
+  <div style="font-weight:400;font-size:12px;margin-top:3px">Fictional demo account. Balance and performance below are calculated from demo records only.</div>
+</div>
+<section class="metrics">
+  <div class="panel metric"><div class="metricicon">▱</div><div><div class="mlabel">Account balance</div><div class="mvalue" id="balance">—</div><div class="mnote" id="balance-note">Provider-reported value</div></div><div class="metricglow">↗</div></div>
+  <div class="panel metric"><div class="metricicon">▥</div><div><div class="mlabel">Completed trades</div><div class="mvalue" id="trades">—</div><div class="mnote">Persisted, completed records</div></div><div class="metricglow">▥</div></div>
+  <div class="panel metric"><div class="metricicon">▤</div><div><div class="mlabel">Raw fills</div><div class="mvalue" id="fills">—</div><div class="mnote">Execution records, not trades</div></div><div class="metricglow">▤</div></div>
+  <div class="panel metric"><div class="metricicon purple">◎</div><div><div class="mlabel">Data readiness</div><div class="mvalue" id="readiness" style="font-size:22px">CHECKING</div><div class="mnote" id="readiness-note">Waiting for quality report</div></div><div class="metricglow">◎</div></div>
+</section>
+<div class="sectiongrid">
+<section class="panel panelpad" id="performance"><div class="sectiontitle"><h2><span class="secticon">⌁</span>Account performance</h2><span class="tag" id="performance-tag">NO VALIDATED SERIES</span></div>
+<div id="demo-filters" hidden style="display:none;flex-wrap:wrap;gap:9px;align-items:end;margin:0 0 14px;padding:12px;border:1px solid #123d66;border-radius:10px;background:#041326">
+  <label style="display:grid;gap:5px;color:#86a8c9;font-size:11px">Date range
+    <select id="filter-range" style="min-width:125px;padding:8px;background:#071a30;color:#eef7ff;border:1px solid #24517a;border-radius:7px">
+      <option value="all">All time</option><option value="today">Today</option><option value="7">Last 7 days</option><option value="30">Last 30 days</option><option value="custom">Custom dates</option>
+    </select>
+  </label>
+  <label style="display:grid;gap:5px;color:#86a8c9;font-size:11px">From
+    <input id="filter-from" type="date" style="padding:8px;background:#071a30;color:#eef7ff;border:1px solid #24517a;border-radius:7px">
+  </label>
+  <label style="display:grid;gap:5px;color:#86a8c9;font-size:11px">To
+    <input id="filter-to" type="date" style="padding:8px;background:#071a30;color:#eef7ff;border:1px solid #24517a;border-radius:7px">
+  </label>
+  <label style="display:grid;gap:5px;color:#86a8c9;font-size:11px">Symbol
+    <select id="filter-symbol" style="min-width:100px;padding:8px;background:#071a30;color:#eef7ff;border:1px solid #24517a;border-radius:7px"><option value="">All symbols</option></select>
+  </label>
+  <label style="display:grid;gap:5px;color:#86a8c9;font-size:11px">Session
+    <select id="filter-session" style="min-width:110px;padding:8px;background:#071a30;color:#eef7ff;border:1px solid #24517a;border-radius:7px"><option value="">All sessions</option></select>
+  </label>
+  <label style="display:grid;gap:5px;color:#86a8c9;font-size:11px">Setup
+    <select id="filter-setup" style="min-width:110px;padding:8px;background:#071a30;color:#eef7ff;border:1px solid #24517a;border-radius:7px"><option value="">All setups</option></select>
+  </label>
+  <button id="filter-reset" type="button" style="padding:8px 12px;background:#0a2543;color:#42e8ff;border:1px solid #24517a;border-radius:7px;cursor:pointer">Reset filters</button>
+  <span id="filter-count" style="color:#86a8c9;font-size:11px">All demo trades</span>
+</div><div class="equitywrap"><svg viewBox="0 0 720 210" preserveAspectRatio="none" aria-label="Equity chart awaiting validated trade history"><defs><pattern id="grid" width="72" height="35" patternUnits="userSpaceOnUse"><path d="M72 0H0V35" fill="none" stroke="#16416a" stroke-width=".8" opacity=".65"/></pattern><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#129dff" stop-opacity=".22"/><stop offset="1" stop-color="#129dff" stop-opacity="0"/></linearGradient></defs><rect width="720" height="210" fill="url(#grid)"/><path d="M0 174H720" stroke="#17436b" stroke-dasharray="4 6"/><text x="18" y="27" fill="#5c86ad" font-size="11">EQUITY CURVE</text><text x="360" y="105" text-anchor="middle" fill="#739cc0" font-size="14">Static portfolio preview</text><text x="360" y="127" text-anchor="middle" fill="#426c93" font-size="11">No live or personal trading data included</text><path d="M20 177H700" stroke="#28a9ff" stroke-width="1.4" opacity=".5" stroke-dasharray="3 7"/></svg></div><div class="chartnote"><span><strong>Win rate</strong> —</span><span><strong>Profit factor</strong> —</span><span><strong>Expectancy</strong> —</span><span id="chart-disclaimer">Awaiting verified trades</span></div></section>
+<section class="panel panelpad" id="risk"><div class="sectiontitle"><h2><span class="secticon">⬡</span>Risk status</h2><span class="tag warn" id="risk-state">AWAITING DATA</span></div><div class="riskhead"><div class="riskbadge">⬡</div><div><strong id="risk-title">Risk snapshot pending</strong><small id="risk-subtitle">Provider values will appear when available</small></div></div><div class="riskitem"><div class="risklabel"><span>Daily loss room</span><b id="daily-room">—</b></div><div class="track green"><span id="daily-bar"></span></div></div><div class="riskitem"><div class="risklabel"><span>Maximum drawdown room</span><b id="drawdown-room">—</b></div><div class="track"><span id="drawdown-bar"></span></div></div><div class="riskitem"><div class="risklabel"><span>Profit target remaining</span><b id="profit-remaining">—</b></div><div class="track purple"><span id="profit-bar"></span></div></div><div class="riskitem"><div class="risklabel"><span>Unrealized P&amp;L</span><b id="unrealized">—</b></div></div><p class="mnote">Risk values are provider-reported snapshots, not independent guarantees or financial verification.</p></section>
+</div>
+<div class="bottomgrid">
+<section class="panel panelpad" id="dna"><div class="sectiontitle"><h2><span class="secticon">⌘</span>Trader DNA</h2><span class="tag warn">BUILDING PROFILE</span></div><div class="dnafigure"><div class="brain">⌘</div><div><div class="trait"><div class="traithead"><span>Discipline</span><span>Not scored</span></div><div class="track"><span></span></div></div><div class="trait"><div class="traithead"><span>Patience</span><span>Not scored</span></div><div class="track"><span></span></div></div><div class="trait"><div class="traithead"><span>Risk management</span><span>Not scored</span></div><div class="track"><span></span></div></div><div class="trait"><div class="traithead"><span>Emotional control</span><span>Not scored</span></div><div class="track"><span></span></div></div></div></div><div class="insightbox"><h3>Trader profile preview</h3><p>Trait scores remain unassigned until enough validated evidence is available.</p></div></section>
+<section class="panel panelpad" id="coach"><div class="insightbox" style="margin-top:0"><h3 id="coach-title">Behavioral coach preview</h3><p id="coach-description">Live behavioral data is not connected in this static portfolio preview.</p></div><div id="behavioral-live-results" style="margin-top:12px"></div><div class="checklist"><span>Evidence-linked behavioral observations</span><span>Separate heuristics from causal conclusions</span><span>Practical guardrails from recorded sequences</span><span>Low-sample warnings remain visible</span></div></section>
+<section class="panel panelpad" id="history"><div class="sectiontitle"><h2><span class="secticon">▤</span>Trade history</h2><span class="tag warn" id="history-count">CHECKING</span></div><div class="insightbox" style="margin-top:0"><div style="font-size:29px;color:#38baff;margin-bottom:8px">▥ ↗</div><h3 id="history-title">Demo interface preview</h3><p id="history-description">This section demonstrates the interface layout. No real trading records are displayed in this public preview.</p></div><div class="tradechart"><svg viewBox="0 0 300 105" preserveAspectRatio="none"><defs><pattern id="miniGrid" width="30" height="21" patternUnits="userSpaceOnUse"><path d="M30 0H0V21" stroke="#16416a" fill="none" stroke-width=".7"/></pattern></defs><rect width="300" height="105" fill="url(#miniGrid)"/><text x="150" y="55" text-anchor="middle" fill="#557da3" font-size="10">STATIC DEMO PREVIEW</text></svg></div>
+<div id="demo-trade-list" style="margin-top:12px;overflow-x:auto"></div>
+<div id="tradedna-timeline" style="margin-top:18px"></div>
+<div id="tradedna-recent-trades" style="margin-top:18px;overflow-x:auto"></div></section>
+</div>
+
+<section class="panel panelpad" id="setup-manager-panel" hidden style="margin-top:14px">
+  <div class="sectiontitle">
+    <h2>Setup Manager</h2>
+    <span class="tag">ACCOUNT SETUPS</span>
+  </div>
+  <p class="mnote" style="margin:0 0 14px">
+    Create and organize your trading setups. Changes apply only to this account.
+  </p>
+  <form id="setup-create-form" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;align-items:end">
+    <label style="display:grid;gap:5px;color:#86a8c9;font-size:11px">
+      Setup name
+      <input id="setup-name" maxlength="100" required placeholder="e.g. ICT Silver Bullet"
+        style="padding:10px;background:#071a30;color:#eef7ff;border:1px solid #24517a;border-radius:7px">
+    </label>
+    <label style="display:grid;gap:5px;color:#86a8c9;font-size:11px">
+      Description
+      <input id="setup-description" maxlength="500" placeholder="Optional notes"
+        style="padding:10px;background:#071a30;color:#eef7ff;border:1px solid #24517a;border-radius:7px">
+    </label>
+    <button type="submit" style="padding:10px 14px;background:#063c49;color:#42e8ff;border:1px solid #087b83;border-radius:7px;cursor:pointer">
+      Create setup
+    </button>
+  </form>
+  <p id="setup-manager-status" role="status" style="color:#86a8c9;font-size:12px;margin:12px 0"></p>
+  <div id="setup-manager-list" style="display:grid;gap:9px"></div>
+</section>
+
+<section class="actions"><div class="sectiontitle" style="margin-bottom:12px"><h2>Quick actions</h2><span class="tag ok" id="integrity-tag">STATIC DEMO</span></div><div class="actiongrid"><a class="action" href="#api-preview"><span class="ai">◎</span><span><b>API documentation</b><small>Live API not connected in this preview</small></span><span class="arrow">›</span></a><a class="action" href="#risk"><span class="ai" style="color:var(--gold)">⬡</span><span><b>Review risk snapshot</b><small>Inspect provider-reported limits</small></span><span class="arrow">›</span></a><a class="action" href="#history"><span class="ai" style="color:var(--green)">⇧</span><span><b>Review data quality</b><small>Raw fills vs validated trades</small></span><span class="arrow">›</span></a><button class="action" id="refresh-btn" type="button"><span class="ai">⟳</span><span><b>Refresh account data</b><small>Re-fetch read-only overview</small></span><span class="arrow">›</span></button></div></section>
+<footer class="footer"><span><b>TradeDNA v3.2.2</b> · Trading intelligence and behavioral analytics</span><span>Portfolio preview · <b>Simulated values only</b> · <span id="updated">Static sample</span></span></footer>
+</main></div>
+
+<script>
+(function () {
+  const setText = (id, value) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = value;
+  };
+
+  const banner = document.getElementById("demo-banner");
+  if (banner) banner.hidden = false;
+
+  setText("balance", "$50,000");
+  setText("balance-note", "Fictional demo value only");
+  setText("trades", "12");
+  setText("fills", "28");
+  setText("readiness", "DEMO ONLY");
+  setText("readiness-note", "Illustrative sample — not live data");
+  setText("performance-tag", "STATIC PREVIEW");
+  setText("risk-state", "DEMO ONLY");
+  setText("risk-title", "Illustrative risk panel");
+  setText("risk-subtitle", "No provider connection");
+  setText("daily-room", "Demo only");
+  setText("drawdown-room", "Demo only");
+  setText("profit-remaining", "Demo only");
+  setText("unrealized", "Not connected");
+  setText("history-count", "DEMO PREVIEW");
+  setText("history-title", "Sample interface only");
+  setText("history-description", "This public preview demonstrates the dashboard layout. It contains no live account information or personal trade records.");
+  setText("coach-title", "Behavioral coach preview");
+  setText("coach-description", "The live API is not connected. Behavioral findings and trader scores are intentionally not fabricated.");
+  setText("updated", "Static sample — no live connection");
+
+  const dot = document.getElementById("status-dot");
+  if (dot) {
+    dot.style.background = "#ffc85a";
+    dot.style.boxShadow = "0 0 13px #ffc85a";
+  }
+
+  const daily = document.getElementById("daily-bar");
+  const drawdown = document.getElementById("drawdown-bar");
+  const profit = document.getElementById("profit-bar");
+  if (daily) daily.style.width = "0%";
+  if (drawdown) drawdown.style.width = "0%";
+  if (profit) profit.style.width = "0%";
+
+  const refresh = document.getElementById("refresh-btn");
+  if (refresh) {
+    refresh.addEventListener("click", function (event) {
+      event.preventDefault();
+      alert("This is a static portfolio preview. No live API is connected.");
+    });
+  }
+
+  document.querySelectorAll(".nav").forEach(function (link) {
+    link.addEventListener("click", function () {
+      document.querySelectorAll(".nav").forEach(function (item) {
+        item.classList.remove("active");
+      });
+      link.classList.add("active");
+    });
+  });
+})();
+</script>
+
+</body></html>
