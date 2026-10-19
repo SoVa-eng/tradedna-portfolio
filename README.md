@@ -1,49 +1,69 @@
-# TradeDNA — Trading Data API Portfolio
+# TradeDNA — Prop Trading Data & Behavioral Analytics
 
-## Overview
+TradeDNA is a personal Python and FastAPI project focused on organizing proprietary trading account data, reconstructing trading activity, and supporting performance analysis and behavioral review.
 
-TradeDNA is an independent software project focused on organizing trading data and helping traders better understand their trading activity.
-
-This portfolio demonstrates my experience with structured data, API development, data validation, software testing, and prop-trading concepts.
-
-## Technical Project
-
-**Technology:** Python, FastAPI, REST APIs, JSON, pytest
-
-My work on TradeDNA has involved:
-- Building and testing API endpoints.
-- Working with structured trading account, order, and fill records.
-- Investigating data validation and trade reconstruction.
-- Troubleshooting software issues and running automated tests.
-- Improving reliability through regression testing.
-
-  
-## API Documentation Preview
-
-The screenshot below shows the locally running TradeDNA API's interactive documentation.
-
-![TradeDNA API documentation preview](images/tradedna-api-docs.png)
-
-
+The project demonstrates practical work in API development, data integration, data quality, testing, and the design of tools for the proprietary trading industry.
 
 ## API Documentation Preview
 
-The screenshot below shows the locally running TradeDNA API's interactive documentation.
+![TradeDNA API Documentation](tradedna-api-docs.png)
 
-![TradeDNA API documentation preview](images/tradedna-api-docs.png)
+*Screenshot of the TradeDNA API documentation interface. The screenshot is a visual portfolio example and does not imply that a live API is publicly hosted.*
 
+## Project Overview
 
-## Work Samples
+TradeDNA explores how raw trading account data can be transformed into structured information that is easier to inspect, validate, and analyze.
 
-- [Sample Prop-Firm Plan Data](samples/prop-firm-plan-example.json) — Example of structured plan information using fictional data.
-- [Data Quality Checklist](samples/data-quality-checks.md) — A repeatable process for reviewing prop-firm information before publication.
-- [Testing Results](samples/testing-results.md) — Summary of automated testing performed on the TradeDNA MFP release.
+Key areas of focus include:
 
-## Relevance to SmartPropFirm
+- **API development:** Building REST API endpoints with Python and FastAPI.
+- **Trading data integration:** Retrieving and organizing account, order, and fill data.
+- **Trade reconstruction:** Developing the workflow for converting raw fills into reconstructed trades.
+- **Data quality:** Identifying incomplete, inconsistent, or invalid records before using them for analysis.
+- **Testing:** Using automated tests to check application behavior and reduce regressions.
+- **Behavioral analytics:** Establishing a foundation for reviewing trading activity and identifying potential behavioral patterns.
 
-This work demonstrates practical experience with structured information, quality assurance, technical troubleshooting, and futures trading concepts. These skills are relevant to researching prop firms, maintaining accurate plan information, and testing trader-focused tools.
+## Technical Stack
 
-## Data Integrity
+- **Language:** Python
+- **API framework:** FastAPI
+- **API documentation:** OpenAPI / Swagger UI
+- **Testing:** pytest
+- **Data formats:** JSON and structured trading records
 
-The prop-firm sample uses fictional data. Private trading records, credentials, and proprietary application source code are not included in this portfolio.
+## Selected Work Samples
 
+### 1. Prop Firm Plan Example
+
+[View the sample JSON file](samples/prop-firm-plan-example.json)
+
+An illustrative structured example demonstrating how proprietary trading account plan information can be represented in JSON.
+
+The example uses fictional data and is intended to demonstrate data organization, not to represent a live account or a verified provider specification.
+
+### 2. Data Quality Checks
+
+[View the data quality checklist](samples/data-quality-checks.md)
+
+A checklist covering considerations for validating trading data before using it for reporting or analysis, including completeness, consistency, and the treatment of questionable records.
+
+### 3. Testing Results
+
+[View the testing results](samples/testing-results.md)
+
+A summary of the recorded automated testing results, including the testing scope and relevant limitations.
+
+The documented test results relate to the tested release and environment. They should not be interpreted as proof that every integration, financial calculation, or production deployment has been independently validated.
+
+## Engineering Considerations
+
+A central challenge in trading analytics is that raw execution records are not necessarily equivalent to completed trades.
+
+Before calculating reliable performance metrics, a system must establish how executions are grouped into positions and how realized profit and loss, fees, and other adjustments are represented.
+
+TradeDNA treats this as an important data-validation problem rather than assuming that raw fills automatically produce accurate performance metrics.
+
+Areas requiring particular care include:
+
+- Matching executions to the correct position.
+- Handling partial fills
