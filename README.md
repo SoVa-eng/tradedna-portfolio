@@ -17,6 +17,14 @@ My work on TradeDNA has involved:
 - Troubleshooting software issues and running automated tests.
 - Improving reliability through regression testing.
 
+- 
+## API Documentation Preview
+
+The screenshot below shows the locally running TradeDNA API's interactive documentation.
+
+![TradeDNA API documentation preview](images/tradedna-api-docs.png)
+
+
 ## Work Samples
 
 - [Sample Prop-Firm Plan Data](samples/prop-firm-plan-example.json) — Example of structured plan information using fictional data.
